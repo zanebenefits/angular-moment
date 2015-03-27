@@ -507,11 +507,11 @@
 			}]);
 	}
 
-	if (typeof define === 'function' && define.amd) {
-		define(['angular', 'moment'], angularMoment);
-	} else if (typeof module !== 'undefined' && module && module.exports) {
+	if (typeof module !== 'undefined' && module && module.exports) {
 		angularMoment(angular, require('moment'));
 		module.exports = 'angularMoment';
+	} else if (typeof define === 'function' && define.amd) {
+		define(['angular', 'moment'], angularMoment);
 	} else {
 		angularMoment(angular, window.moment);
 	}
